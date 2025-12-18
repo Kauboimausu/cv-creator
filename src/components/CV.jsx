@@ -12,6 +12,14 @@ export default function CV({ personalInfo, educationInfo, practicalInfo }) {
         <li key={practicalItem.companyName + practicalItem.positionTitle} className="practical-item">
             <h2 className="company-name">{practicalItem.companyName}</h2>
             <h3 className="practical-position">{practicalItem.positionTitle}</h3>
+            <span className="practical-responsibilities">Responsibilities:</span>
+            <ul className="responsibilities-list">
+                {practicalItem.responsibilities.map(responsibility => 
+                <li key={practicalItem.companyName + practicalItem.positionTitle + responsibility} className="responsibility">
+                    {responsibility}
+                </li>
+                )}
+            </ul>
             <span className="duration-of-work">From {practicalItem.startDate} to {practicalItem.endDate}</span>
         </li>
     )
