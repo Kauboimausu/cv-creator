@@ -1,7 +1,8 @@
-export default function GeneralInfo({ onSubmit }) {
+export default function GeneralInfo({ personalInfo, onSubmit }) {
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		onSubmit(e.currentTarget);
+        const formData = new FormData(e.target)
+		onSubmit(formData);
 	};
 
 	return (
@@ -11,7 +12,7 @@ export default function GeneralInfo({ onSubmit }) {
 				type="text"
 				name="name"
 				id="name"
-				placeholder="Jane Doe"
+				defaultValue={personalInfo.name}
 				required
 			/>
 
@@ -20,7 +21,7 @@ export default function GeneralInfo({ onSubmit }) {
 				type="email"
 				name="email"
 				id="email"
-				placeholder="janedoe@gmail.com"
+				defaultValue={personalInfo.email}
 				required
 			/>
 
@@ -29,7 +30,7 @@ export default function GeneralInfo({ onSubmit }) {
 				type="tel"
 				name="phone-number"
 				id="phone-number"
-				placeholder="1234567890"
+				defaultValue={personalInfo.phone}
 				required
 			/>
 

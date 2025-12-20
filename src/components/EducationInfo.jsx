@@ -1,45 +1,60 @@
 export default function EducationInfo({
 	educationEntries,
-	onChange,
+	onSubmit,
 	onDelete,
 	onAdd,
 }) {
+	const handleSubmit = (e, id) => {
+		e.preventDefault();
+        const formData = new FormData(e.target)
+		onSubmit(id, formData);
+	};
+
 	return (
-		<form className="education-info-form" onChange={onChange}>
+		<div className="education-info-form">
 			{educationEntries.map((entry) => (
-				<form key={"form-educationItem" + entry.id}>
+				<form key={entry.id} onSubmit={e => handleSubmit(e, entry.id)}>
 					<label htmlFor={entry.id + "school-name"}>
-						School Name:{" "}
+						School Name:
 					</label>
 					<input
 						type="text"
-						name={entry.id + "school-name"}
+						name="school-name"
 						id={entry.id + "school-name"}
-						placeholder="University of Sprinfield"
+						defaultValue={entry.schoolName}
 						required
 					/>
 
 					<label htmlFor={entry.id + "study-title"}>
-						Title of Study:{" "}
+						Title of Study:
 					</label>
 					<input
 						type="text"
-						name={entry.id + "study-title"}
+						name="study-title"
 						id={entry.id + "study-title"}
-						placeholder="B.S. Computer Science"
+						defaultValue={entry.titleOfStudy}
 						required
 					/>
 
-					<label htmlFor={entry.id + "start-date"}>
-						Start Date:{" "}
-					</label>
+					<label htmlFor={entry.id + "start-date"}>Start Date:</label>
 					<input
 						type="date"
-						name={entry.id + "study-title"}
-						id={entry.id + "study-title"}
-						placeholder="B.S. Computer Science"
+						name="start-date"
+						id={entry.id + "start-date"}
+						defaultValue={entry.startDate}
 						required
 					/>
+
+					<label htmlFor={entry.id + "end-date"}>End Date:</label>
+					<input
+						type="date"
+						name="end-date"
+						id={entry.id + "end-date"}
+						defaultValue={entry.endDate}
+						required
+					/>
+
+					<button type="submit">Submit</button>
 
 					<button
 						type="button"
@@ -58,6 +73,6 @@ export default function EducationInfo({
 			>
 				Add Education Entry
 			</button>
-		</form>
+		</div>
 	);
 }

@@ -9,8 +9,8 @@ const janeDoeEducationInfo = [
 		id: 0,
 		schoolName: "University of Springfield",
 		titleOfStudy: "B.S. Computer Science",
-		startDate: "January 2016",
-		endDate: "December 2020",
+		startDate: "2016-01-01",
+		endDate: "2020-06-01",
 	},
 ];
 
