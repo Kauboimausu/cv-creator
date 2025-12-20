@@ -18,6 +18,8 @@ function App() {
 	let nextPracticalID = practicalInfo.length;
 	// const [nextPracticalID, setNextPracticalID] = useState(practicalInfo.length)
 
+  
+
 	function handlePersonalInfoEdit(formData) {
 		setPersonalInfo({
 			name: formData.get("name"),

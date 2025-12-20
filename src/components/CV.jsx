@@ -1,10 +1,12 @@
+import { parseDate } from "./DateParser";
+
 export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 	const educationalTrajectory = educationInfo.map((eduItem) => (
 		<li key={"cv-educationItem" + eduItem.id} className="education-item">
 			<h2 className="study-name">{eduItem.titleOfStudy}</h2>
 			<h3 className="school-name">{eduItem.schoolName}</h3>
 			<span className="duration-of-study">
-				From {eduItem.startDate} to {eduItem.endDate}
+				From {parseDate(eduItem.startDate)} to {parseDate(eduItem.endDate)}
 			</span>
 		</li>
 	));
@@ -23,7 +25,7 @@ export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 			</span>
 			<p className="responsibilities">{practicalItem.responsibilities}</p>
 			<span className="duration-of-work">
-				From {practicalItem.startDate} to {practicalItem.endDate}
+				From {parseDate(practicalItem.startDate)} to {parseDate(practicalItem.endDate)}
 			</span>
 		</li>
 	));
