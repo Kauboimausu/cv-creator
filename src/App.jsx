@@ -1,46 +1,30 @@
 import { useState } from 'react'
 import './styles/reset.css'
 import CV from './components/CV'
+import GeneralInfo from './components/GeneralInfo'
+import { janeDoePersonalInfo, janeDoeEducationInfo, janeDoePracticalInfo } from './defaultInfo' 
 
 function App() {
-
-  const janeDoePersonalInfo = {
-    name: "Jane Doe",
-    email: "janedoe@gmail.com",
-    phone: "123-456-7890"
-  }
-
-  const janeDoeEducationInfo = [
-    {
-      schoolName: "University of Springfield",
-      titleOfStudy: "B.S. Computer Science",
-      startDate: "January 2016",
-      endDate: "December 2020"
-    }
-  ]
-
-  const janeDoePracticalInfo = [
-    {
-      companyName: "Meta",
-      positionTitle: "Jr. Software Engineer",
-      responsibilities: ["Debugging", "Software Development"],
-      startDate: "August 2018",
-      endDate: "February 2019"
-    }
-  ]
-  
 
   const [personalInfo, setPersonalInfo] = useState(janeDoePersonalInfo)
   const [educationInfo, setEducationInfo] = useState(janeDoeEducationInfo)
   const [practicalInfo, setPracticalInfo] = useState(janeDoePracticalInfo)
 
-
+  function handlePersonalInfoChange(formData){
+    setPersonalInfo({
+      name: formData[0].value,
+      email: formData[1].value,
+      phone: formData[2].value
+    })
+  }
 
 
 
   return (
     <>
-      Hola Mundo
+
+      <GeneralInfo onSubmit={handlePersonalInfoChange}/>
+
       <CV
         personalInfo={personalInfo}
         educationInfo={educationInfo}
