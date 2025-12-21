@@ -4,11 +4,12 @@ import CV from "./components/CV"
 import GeneralInfo from "./components/GeneralInfo"
 import EducationInfo from "./components/EducationInfo"
 import PracticalInfo from "./components/PracticalInfo"
+import Card from "./components/Card"
 import {
 	janeDoePersonalInfo,
 	janeDoeEducationInfo,
 	janeDoePracticalInfo,
-} from "./defaultInfo"
+} from "./assets/defaultInfo"
 
 function App() {
 	const [personalInfo, setPersonalInfo] = useState(janeDoePersonalInfo)
@@ -52,7 +53,7 @@ function App() {
 					return {
 						id: practicalEntry.id,
 						companyName: formData.get("company-name"),
-						positionTitle: formData.get("position"),
+						positionTitle: formData.get("position-title"),
 						responsibilities: formData.get("responsibilities"),
 						startDate: formData.get("start-date"),
 						endDate: formData.get("end-date"),
@@ -111,23 +112,31 @@ function App() {
 
 	return (
 		<>
-			<GeneralInfo
-				personalInfo={personalInfo}
-				onSubmit={handlePersonalInfoEdit}
-			/>
-			<EducationInfo
-				educationEntries={educationInfo}
-				onSubmit={handleEducationEntryEdit}
-				onDelete={handleDeleteEducationEntry}
-				onAdd={handleAddEducationEntry}
-			/>
-
-			<PracticalInfo
-				practicalEntries={practicalInfo}
-				onSubmit={handlePracticalEntryEdit}
-				onDelete={handleDeletePracticalEntry}
-				onAdd={handleAddPracticalEntry}
-			/>
+			<div className="info-input">
+				<Card>
+					<GeneralInfo
+					personalInfo={personalInfo}
+					onSubmit={handlePersonalInfoEdit}
+					/>
+				</Card>
+				
+				<Card>
+					<EducationInfo
+						educationEntries={educationInfo}
+						onSubmit={handleEducationEntryEdit}
+						onDelete={handleDeleteEducationEntry}
+						onAdd={handleAddEducationEntry}
+					/>
+				</Card>
+				<Card>
+					<PracticalInfo
+						practicalEntries={practicalInfo}
+						onSubmit={handlePracticalEntryEdit}
+						onDelete={handleDeletePracticalEntry}
+						onAdd={handleAddPracticalEntry}
+					/>
+				</Card>
+			</div>
 
 			<CV
 				personalInfo={personalInfo}

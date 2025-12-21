@@ -7,7 +7,7 @@ export default function GeneralInfo({ personalInfo, onSubmit }) {
 
 	return (
 		<form className="general-info-form" onSubmit={(e) => handleSubmit(e)}>
-			<label htmlFor="name">Name: </label>
+			<label htmlFor="name">Name:</label>
 			<input
 				type="text"
 				name="name"
@@ -16,7 +16,7 @@ export default function GeneralInfo({ personalInfo, onSubmit }) {
 				required
 			/>
 
-			<label htmlFor="email">Email: </label>
+			<label htmlFor="email">Email:</label>
 			<input
 				type="email"
 				name="email"
@@ -25,7 +25,7 @@ export default function GeneralInfo({ personalInfo, onSubmit }) {
 				required
 			/>
 
-			<label htmlFor="phone-number">Phone Number: </label>
+			<label htmlFor="phone-number">Phone Number:</label>
 			<input
 				type="tel"
 				name="phone-number"

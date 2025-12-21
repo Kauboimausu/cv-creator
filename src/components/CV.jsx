@@ -26,7 +26,7 @@ export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 			</span>
 			<p className="responsibilities">{practicalItem.responsibilities}</p>
 			<span className="duration-of-work">
-				From {parseDate(practicalItem.startDate)} to{" "}
+				From {parseDate(practicalItem.startDate)} to
 				{parseDate(practicalItem.endDate)}
 			</span>
 		</li>

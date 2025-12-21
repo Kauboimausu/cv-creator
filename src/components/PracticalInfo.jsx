@@ -29,7 +29,7 @@ export default function PracticalInfo({
 					/>
 
 					<label htmlFor={entry.id + "position-title"}>
-						Position
+						Position:
 					</label>
 					<input
 						type="text"
@@ -40,15 +40,14 @@ export default function PracticalInfo({
 					/>
 
 					<label htmlFor={entry.id + "responsibilities"}>
-						Position Responsibilities
+						Position Responsibilities:
 					</label>
-					<input
-						type="textarea"
-						name="responsibilities"
-						id={entry.id + "position-title"}
-						defaultValue={entry.responsibilities}
-						required
-					/>
+					<textarea 
+					name="responsibilities"
+					id={entry.id + "responsibilities"}
+					defaultValue={entry.responsibilities}
+					required
+					></textarea>
 
 					<label htmlFor={entry.id + "start-date"}>Start Date:</label>
 					<input
