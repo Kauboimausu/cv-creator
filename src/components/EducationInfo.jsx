@@ -5,15 +5,18 @@ export default function EducationInfo({
 	onAdd,
 }) {
 	const handleSubmit = (e, id) => {
-		e.preventDefault();
-        const formData = new FormData(e.target)
-		onSubmit(id, formData);
-	};
+		e.preventDefault()
+		const formData = new FormData(e.target)
+		onSubmit(id, formData)
+	}
 
 	return (
 		<div className="education-info-form">
 			{educationEntries.map((entry) => (
-				<form key={entry.id} onSubmit={e => handleSubmit(e, entry.id)}>
+				<form
+					key={entry.id}
+					onSubmit={(e) => handleSubmit(e, entry.id)}
+				>
 					<label htmlFor={entry.id + "school-name"}>
 						School Name:
 					</label>
@@ -38,7 +41,7 @@ export default function EducationInfo({
 
 					<label htmlFor={entry.id + "start-date"}>Start Date:</label>
 					<input
-						type="date"
+						type="month"
 						name="start-date"
 						id={entry.id + "start-date"}
 						defaultValue={entry.startDate}
@@ -47,32 +50,32 @@ export default function EducationInfo({
 
 					<label htmlFor={entry.id + "end-date"}>End Date:</label>
 					<input
-						type="date"
+						type="month"
 						name="end-date"
 						id={entry.id + "end-date"}
 						defaultValue={entry.endDate}
 						required
 					/>
 
-					<button type="submit">Submit</button>
+					<button type="submit" className="submit">
+						Submit
+					</button>
 
 					<button
 						type="button"
-						onClick={onDelete}
-						className="delete-education-entry"
+						onClick={() => {
+							onDelete(entry.id)
+						}}
+						className="delete"
 					>
 						Delete Entry
 					</button>
 				</form>
 			))}
 
-			<button
-				onClick={onAdd}
-				className="add-education-entry"
-				type="button"
-			>
+			<button onClick={onAdd} className="add" type="button">
 				Add Education Entry
 			</button>
 		</div>
-	);
+	)
 }

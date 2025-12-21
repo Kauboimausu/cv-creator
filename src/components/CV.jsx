@@ -1,4 +1,4 @@
-import { parseDate } from "./DateParser";
+import { parseDate } from "./DateParser"
 
 export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 	const educationalTrajectory = educationInfo.map((eduItem) => (
@@ -9,7 +9,7 @@ export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 				From {parseDate(eduItem.startDate)} to {parseDate(eduItem.endDate)}
 			</span>
 		</li>
-	));
+	))
 
 	const practicalTrajectory = practicalInfo.map((practicalItem) => (
 		<li
@@ -28,7 +28,7 @@ export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 				From {parseDate(practicalItem.startDate)} to {parseDate(practicalItem.endDate)}
 			</span>
 		</li>
-	));
+	))
 
 	return (
 		<div className="curriculum">
@@ -46,5 +46,5 @@ export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 				<ul className="practical-history">{practicalTrajectory}</ul>
 			</div>
 		</div>
-	);
+	)
 }

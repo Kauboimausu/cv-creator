@@ -1,31 +1,29 @@
-import { useState } from "react";
-import "./styles/reset.css";
-import CV from "./components/CV";
-import GeneralInfo from "./components/GeneralInfo";
-import EducationInfo from "./components/EducationInfo";
+import { useState } from "react"
+import "./styles/reset.css"
+import CV from "./components/CV"
+import GeneralInfo from "./components/GeneralInfo"
+import EducationInfo from "./components/EducationInfo"
 import {
 	janeDoePersonalInfo,
 	janeDoeEducationInfo,
 	janeDoePracticalInfo,
-} from "./defaultInfo";
+} from "./defaultInfo"
 
 function App() {
-	const [personalInfo, setPersonalInfo] = useState(janeDoePersonalInfo);
-	const [educationInfo, setEducationInfo] = useState(janeDoeEducationInfo);
+	const [personalInfo, setPersonalInfo] = useState(janeDoePersonalInfo)
+	const [educationInfo, setEducationInfo] = useState(janeDoeEducationInfo)
 	// const [nextEducationID, setNextEducationID] = useState(educationInfo.length)
-	let nextEducationID = educationInfo.length;
-	const [practicalInfo, setPracticalInfo] = useState(janeDoePracticalInfo);
-	let nextPracticalID = practicalInfo.length;
+	let nextEducationID = educationInfo.length
+	const [practicalInfo, setPracticalInfo] = useState(janeDoePracticalInfo)
+	let nextPracticalID = practicalInfo.length
 	// const [nextPracticalID, setNextPracticalID] = useState(practicalInfo.length)
-
-  
 
 	function handlePersonalInfoEdit(formData) {
 		setPersonalInfo({
 			name: formData.get("name"),
 			email: formData.get("email"),
 			phone: formData.get("phone-number"),
-		});
+		})
 	}
 
 	function handleEducationEntryEdit(id, formData) {
@@ -38,12 +36,12 @@ function App() {
 						titleOfStudy: formData.get("study-title"),
 						startDate: formData.get("start-date"),
 						endDate: formData.get("end-date"),
-					};
+					}
 				} else {
-					return educationEntry;
+					return educationEntry
 				}
 			})
-		);
+		)
 	}
 
 	function handlePracticalEntryEdit(id, formData) {
@@ -57,12 +55,12 @@ function App() {
 						responsibilities: formData.get("responsibilities"),
 						startDate: formData.get("start-date"),
 						endDate: formData.get("end-date"),
-					};
+					}
 				} else {
-					return practicalEntry;
+					return practicalEntry
 				}
 			})
-		);
+		)
 	}
 
 	function handleDeleteEducationEntry(deleteID) {
@@ -70,7 +68,7 @@ function App() {
 			educationInfo.filter(
 				(educationItem) => educationItem.id != deleteID
 			)
-		);
+		)
 	}
 
 	function handleDeletePracticalEntry(deleteID) {
@@ -78,7 +76,7 @@ function App() {
 			practicalInfo.filter(
 				(practicalItem) => practicalItem.id != deleteID
 			)
-		);
+		)
 	}
 
 	function handleAddEducationEntry() {
@@ -91,8 +89,8 @@ function App() {
 				startDate: "",
 				endDate: "",
 			},
-		]);
-		nextEducationID++;
+		])
+		nextEducationID++
 	}
 
 	function handleAddPracticalEntry() {
@@ -106,15 +104,18 @@ function App() {
 				startDate: "",
 				endDate: "",
 			},
-		]);
-		nextPracticalID++;
+		])
+		nextPracticalID++
 	}
 
 	return (
 		<>
-			<GeneralInfo personalInfo={personalInfo} onSubmit={handlePersonalInfoEdit} />
+			<GeneralInfo
+				personalInfo={personalInfo}
+				onSubmit={handlePersonalInfoEdit}
+			/>
 			<EducationInfo
-        educationEntries={educationInfo}
+				educationEntries={educationInfo}
 				onSubmit={handleEducationEntryEdit}
 				onDelete={handleDeleteEducationEntry}
 				onAdd={handleAddEducationEntry}
@@ -126,7 +127,7 @@ function App() {
 				practicalInfo={practicalInfo}
 			></CV>
 		</>
-	);
+	)
 }
 
-export default App;
+export default App

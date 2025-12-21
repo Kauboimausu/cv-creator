@@ -17,5 +17,5 @@ const months = [
 export function parseDate(date) {
     const dateComponents = date.split("-")
     const month = months[Number(dateComponents[1])]
-    return `${month} ${dateComponents[2]}, ${dateComponents[0]}`
+    return `${month}, ${dateComponents[0]}`
 }

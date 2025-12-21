@@ -1,9 +1,9 @@
 export default function GeneralInfo({ personalInfo, onSubmit }) {
 	const handleSubmit = (e) => {
-		e.preventDefault();
-        const formData = new FormData(e.target)
-		onSubmit(formData);
-	};
+		e.preventDefault()
+		const formData = new FormData(e.target)
+		onSubmit(formData)
+	}
 
 	return (
 		<form className="general-info-form" onSubmit={(e) => handleSubmit(e)}>
@@ -36,5 +36,5 @@ export default function GeneralInfo({ personalInfo, onSubmit }) {
 
 			<button type="submit">Submit</button>
 		</form>
-	);
+	)
 }
