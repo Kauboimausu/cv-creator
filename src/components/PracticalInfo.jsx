@@ -13,7 +13,10 @@ export default function PracticalInfo({
 	return (
 		<div className="practical-info-form">
 			{practicalEntries.map((entry) => (
-				<form key={entry.id} onSubmit={(e) => handleSubmit(e, entry.id)}>
+				<form
+					key={entry.id}
+					onSubmit={(e) => handleSubmit(e, entry.id)}
+				>
 					<label htmlFor={entry.id + "company-name"}>
 						Company Name:
 					</label>
