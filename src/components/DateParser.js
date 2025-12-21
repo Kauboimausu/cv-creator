@@ -16,6 +16,6 @@ const months = [
 // Parses dates to be more human readable and prettier
 export function parseDate(date) {
     const dateComponents = date.split("-")
-    const month = months[Number(dateComponents[1])]
+    const month = months[Number(dateComponents[1]-1)]
     return `${month}, ${dateComponents[0]}`
 }
