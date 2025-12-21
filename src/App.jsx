@@ -3,6 +3,7 @@ import "./styles/reset.css"
 import CV from "./components/CV"
 import GeneralInfo from "./components/GeneralInfo"
 import EducationInfo from "./components/EducationInfo"
+import PracticalInfo from "./components/PracticalInfo"
 import {
 	janeDoePersonalInfo,
 	janeDoeEducationInfo,
@@ -119,6 +120,13 @@ function App() {
 				onSubmit={handleEducationEntryEdit}
 				onDelete={handleDeleteEducationEntry}
 				onAdd={handleAddEducationEntry}
+			/>
+
+			<PracticalInfo
+				practicalEntries={practicalInfo}
+				onSubmit={handlePracticalEntryEdit}
+				onDelete={handleDeletePracticalEntry}
+				onAdd={handleAddPracticalEntry}
 			/>
 
 			<CV

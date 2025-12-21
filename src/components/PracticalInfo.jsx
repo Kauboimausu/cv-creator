@@ -13,7 +13,7 @@ export default function PracticalInfo({
 	return (
 		<div className="practical-info-form">
 			{practicalEntries.map((entry) => (
-				<form key={entry.id} onSubmit={(e) => handleSubmit(e)}>
+				<form key={entry.id} onSubmit={(e) => handleSubmit(e, entry.id)}>
 					<label htmlFor={entry.id + "company-name"}>
 						Company Name:
 					</label>
@@ -49,7 +49,7 @@ export default function PracticalInfo({
 
 					<label htmlFor={entry.id + "start-date"}>Start Date:</label>
 					<input
-						type="date"
+						type="month"
 						name="start-date"
 						id={entry.id + "start-date"}
 						defaultValue={entry.startDate}
@@ -58,7 +58,7 @@ export default function PracticalInfo({
 
 					<label htmlFor={entry.id + "end-date"}>End Date:</label>
 					<input
-						type="date"
+						type="month"
 						name="end-date"
 						id={entry.id + "end-date"}
 						defaultValue={entry.endDate}
