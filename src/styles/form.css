@@ -1,3 +1,12 @@
+.forms-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    min-width: 300px;
+}
+
 .info-form {
     display: flex;
     flex-direction: column;
@@ -8,7 +17,32 @@
     padding: .75em 1em;
 }
 
+button { 
+    border: none;
+    width: 225px;
+    border-radius: .25em;
+    padding: .20em .5em;
+}
+
+.info-form > button {
+    align-self: center;
+}
+
+.add {
+    background-color: var(--add-blue);
+}
+
+.delete {
+    background-color: var(--delete-red);
+}
+
+.submit {
+    background-color: var(--submit-yellow);
+}
+
+
 .input-wrap {
     display: flex;
+    column-gap: 1em;
     justify-content: space-between;
 }

@@ -1,11 +1,11 @@
 :root {
     --dark-purple: #602060;
-    --light-pink: #ffcccc;
-    --orange: #ff8000;
+    --submit-pink: #ffcccc;
+    --submit-yellow: #ffff99;
     --black: #000000;
     --white: #ffffff;
-    --valid-color: #33ccff;
-    --invalid-color: #ff6666;
+    --add-blue: #33ccff;
+    --delete-red: #ff6666;
     font-family: Vollkorn, Karla;
 }
 
@@ -35,4 +35,5 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow: scroll;
 }
