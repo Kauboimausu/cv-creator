@@ -1,3 +1,5 @@
+import "../styles/form.css"
+
 export default function EducationInfo({
 	educationEntries,
 	onSubmit,
@@ -11,51 +13,60 @@ export default function EducationInfo({
 	}
 
 	return (
-		<div className="education-info-form">
+		<div className="forms-wrap">
 			{educationEntries.map((entry) => (
 				<form
+					className="education info-form"
 					key={entry.id}
 					onSubmit={(e) => handleSubmit(e, entry.id)}
 				>
-					<label htmlFor={entry.id + "school-name"}>
-						School Name:
-					</label>
-					<input
-						type="text"
-						name="school-name"
-						id={entry.id + "school-name"}
-						defaultValue={entry.schoolName}
-						required
-					/>
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "school-name"}>
+							School Name:
+						</label>
+						<input
+							type="text"
+							name="school-name"
+							id={entry.id + "school-name"}
+							defaultValue={entry.schoolName}
+							required
+						/>
+					</div>
 
-					<label htmlFor={entry.id + "study-title"}>
-						Title of Study:
-					</label>
-					<input
-						type="text"
-						name="study-title"
-						id={entry.id + "study-title"}
-						defaultValue={entry.titleOfStudy}
-						required
-					/>
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "study-title"}>
+							Title of Study:
+						</label>
+						<input
+							type="text"
+							name="study-title"
+							id={entry.id + "study-title"}
+							defaultValue={entry.titleOfStudy}
+							required
+						/>
+					</div>
 
-					<label htmlFor={entry.id + "start-date"}>Start Date:</label>
-					<input
-						type="month"
-						name="start-date"
-						id={entry.id + "start-date"}
-						defaultValue={entry.startDate}
-						required
-					/>
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "start-date"}>Start Date:</label>
+						<input
+							type="month"
+							name="start-date"
+							id={entry.id + "start-date"}
+							defaultValue={entry.startDate}
+							required
+						/>
+					</div>
 
-					<label htmlFor={entry.id + "end-date"}>End Date:</label>
-					<input
-						type="month"
-						name="end-date"
-						id={entry.id + "end-date"}
-						defaultValue={entry.endDate}
-						required
-					/>
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "end-date"}>End Date:</label>
+						<input
+							type="month"
+							name="end-date"
+							id={entry.id + "end-date"}
+							defaultValue={entry.endDate}
+							required
+						/>
+					</div>
 
 					<button type="submit" className="submit">
 						Submit

@@ -1,0 +1,14 @@
+.info-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: .25em;
+    margin: 1.15em 2em;
+    border: 1px solid black;
+    box-shadow: 15px -8px 15px -2px rgba(0,0,0,0.55);
+    padding: .75em 1em;
+}
+
+.input-wrap {
+    display: flex;
+    justify-content: space-between;
+}

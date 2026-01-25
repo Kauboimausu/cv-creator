@@ -1,5 +1,27 @@
-#root{
-    display: grid;
-    grid-template-columns: 2;
+:root {
+    --dark-purple: #602060;
+    --light-pink: #ffcccc;
+    --orange: #ff8000;
+    --black: #000000;
+    --white: #ffffff;
+    --valid-color: #33ccff;
+    --invalid-color: #ff6666;
 }
 
+body {
+    height: 100vh;
+}
+
+#root{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+}
+
+.info-input {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

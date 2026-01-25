@@ -5,6 +5,7 @@ import GeneralInfo from "./components/GeneralInfo"
 import EducationInfo from "./components/EducationInfo"
 import PracticalInfo from "./components/PracticalInfo"
 import Card from "./components/Card"
+
 import {
 	janeDoePersonalInfo,
 	janeDoeEducationInfo,

@@ -1,3 +1,5 @@
+import "../styles/form.css"
+
 export default function PracticalInfo({
 	practicalEntries,
 	onSubmit,
@@ -11,61 +13,72 @@ export default function PracticalInfo({
 	}
 
 	return (
-		<div className="practical-info-form">
+		<div className="forms-wrap">
 			{practicalEntries.map((entry) => (
 				<form
+					className="practical info-form"
 					key={entry.id}
 					onSubmit={(e) => handleSubmit(e, entry.id)}
 				>
-					<label htmlFor={entry.id + "company-name"}>
-						Company Name:
-					</label>
-					<input
-						type="text"
-						name="company-name"
-						id={entry.id + "company-name"}
-						defaultValue={entry.companyName}
-						required
-					/>
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "company-name"}>
+							Company Name:
+						</label>
+						<input
+							type="text"
+							name="company-name"
+							id={entry.id + "company-name"}
+							defaultValue={entry.companyName}
+							required
+						/>
+					</div>
 
-					<label htmlFor={entry.id + "position-title"}>
-						Position:
-					</label>
-					<input
-						type="text"
-						name="position-title"
-						id={entry.id + "position-title"}
-						defaultValue={entry.positionTitle}
-						required
-					/>
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "position-title"}>
+							Position:
+						</label>
+						<input
+							type="text"
+							name="position-title"
+							id={entry.id + "position-title"}
+							defaultValue={entry.positionTitle}
+							required
+						/>
+					</div>
 
-					<label htmlFor={entry.id + "responsibilities"}>
-						Position Responsibilities:
-					</label>
-					<textarea 
-					name="responsibilities"
-					id={entry.id + "responsibilities"}
-					defaultValue={entry.responsibilities}
-					required
-					></textarea>
-
-					<label htmlFor={entry.id + "start-date"}>Start Date:</label>
-					<input
-						type="month"
-						name="start-date"
-						id={entry.id + "start-date"}
-						defaultValue={entry.startDate}
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "responsibilities"}>
+							Position Responsibilities:
+						</label>
+						<textarea
+						name="responsibilities"
+						id={entry.id + "responsibilities"}
+						defaultValue={entry.responsibilities}
 						required
-					/>
+						></textarea>
+					</div>
 
-					<label htmlFor={entry.id + "end-date"}>End Date:</label>
-					<input
-						type="month"
-						name="end-date"
-						id={entry.id + "end-date"}
-						defaultValue={entry.endDate}
-						required
-					/>
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "start-date"}>Start Date:</label>
+						<input
+							type="month"
+							name="start-date"
+							id={entry.id + "start-date"}
+							defaultValue={entry.startDate}
+							required
+						/>
+					</div>
+
+					<div className="input-wrap">
+						<label htmlFor={entry.id + "end-date"}>End Date:</label>
+						<input
+							type="month"
+							name="end-date"
+							id={entry.id + "end-date"}
+							defaultValue={entry.endDate}
+							required
+						/>
+					</div>
 
 					<button type="submit" className="submit">
 						Submit
