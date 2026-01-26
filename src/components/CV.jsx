@@ -1,3 +1,4 @@
+import "../styles/cv.css"
 import { parseDate } from "./DateParser"
 
 export default function CV({ personalInfo, educationInfo, practicalInfo }) {
@@ -26,7 +27,7 @@ export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 			</span>
 			<p className="responsibilities">{practicalItem.responsibilities}</p>
 			<span className="duration-of-work">
-				From {parseDate(practicalItem.startDate)} to
+				From {parseDate(practicalItem.startDate)} to{" "}
 				{parseDate(practicalItem.endDate)}
 			</span>
 		</li>
@@ -41,10 +42,12 @@ export default function CV({ personalInfo, educationInfo, practicalInfo }) {
 			</div>
 
 			<div className="curriculum-info" id="education-info">
+				<h2 className="education">Education</h2>
 				<ul className="education-history">{educationalTrajectory}</ul>
 			</div>
 
 			<div className="curriculum-info" id="practical-info">
+				<h2 className="experience">Experience</h2>
 				<ul className="practical-history">{practicalTrajectory}</ul>
 			</div>
 		</div>

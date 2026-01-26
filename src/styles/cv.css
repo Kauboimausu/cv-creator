@@ -1,0 +1,39 @@
+.curriculum {
+	border: 1px solid black;
+	margin: 2em 3em;
+	display: flex;
+	flex-direction: column;
+	padding: 2em 3em;
+	row-gap: 1.15em;
+}
+
+#personal-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.experience, .education {
+    border-top: 1px solid black;
+    margin-bottom: .25em;
+    padding-top: .15em;
+}
+
+.school-name,
+.duration-of-study {
+	margin-left: 0.5em;
+}
+
+li ~ li {
+    margin-top: .35em;
+}
+
+.practical-position,
+.practical-responsibilities,
+.duration-of-work {
+	margin-left: 0.25em;
+}
+
+.responsibilities {
+	margin-left: 0.5em;
+}
